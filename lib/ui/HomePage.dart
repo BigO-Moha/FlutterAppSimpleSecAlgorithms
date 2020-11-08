@@ -113,13 +113,29 @@ class _HomePageState extends State<HomePage> {
                         ),
                         InkWell(
                             child: CatGrid(
-                                text: "decryption with key",
-                                icon: Icons.security_rounded),
+                                text: "decryption with key", icon: Icons.lock),
                             onTap: () {
                               setState(() {
                                 showSheet = !showSheet;
                                 if (showSheet) {
                                   _showSheet(
+                                      title: "decryption using variable Key",
+                                      isEncryped: false);
+                                } else {
+                                  Navigator.pop(_scaffoldCtx);
+                                }
+                              });
+                            }),
+                        InkWell(
+                            child: CatGrid(
+                                text: "decryption with default key",
+                                icon: Icons.lock_open),
+                            onTap: () {
+                              setState(() {
+                                showSheet = !showSheet;
+                                if (showSheet) {
+                                  _showSheet(
+                                      keys: true,
                                       title: "decryption using variable Key",
                                       isEncryped: false);
                                 } else {
@@ -153,7 +169,7 @@ class _HomePageState extends State<HomePage> {
             child: Container(
                 padding: EdgeInsets.all(10),
                 width: double.infinity,
-                color: Colors.blueAccent,
+                color: Colors.white70,
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -241,7 +257,9 @@ class _HomePageState extends State<HomePage> {
                                               filled: true,
                                               hintText: value.state,
                                               hintStyle: MyText.body1(context)
-                                                  .copyWith(color: Colors.red),
+                                                  .copyWith(
+                                                      color: Colors.red,
+                                                      fontSize: 30),
                                               focusedBorder: OutlineInputBorder(
                                                 borderRadius:
                                                     BorderRadius.circular(0),

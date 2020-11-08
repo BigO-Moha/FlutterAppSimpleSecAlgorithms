@@ -75,17 +75,20 @@ class DrawersSide extends StatelessWidget {
               },
             ),
             ListTile(
-              title: Text("Latest",
+              title: Text("HillCipher",
                   style: MyText.subhead(context).copyWith(
                       color: Colors.black, fontWeight: FontWeight.w500)),
-              leading: Icon(Icons.access_time, size: 25.0, color: Colors.grey),
-              onTap: () {},
+              leading:
+                  Icon(Icons.network_locked, size: 25.0, color: Colors.red),
+              onTap: () {
+                Navigator.pushReplacementNamed(context, "/Hill");
+              },
             ),
             ListTile(
               title: Text("Highlight",
                   style: MyText.subhead(context).copyWith(
                       color: Colors.black, fontWeight: FontWeight.w500)),
-              leading: Icon(Icons.highlight, size: 25.0, color: Colors.grey),
+              leading: Icon(Icons.lock_sharp, size: 25.0, color: Colors.grey),
               onTap: () {},
             ),
             Divider(),

@@ -3,6 +3,7 @@ import 'package:encrypt_decrypt/ui/wordCounter.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import './ui/HomePage.dart';
+import './ui/HillCipherUi.dart';
 import './ui/wordCounter.dart';
 import './data/Calc.dart';
 
@@ -36,7 +37,8 @@ class MyApp extends StatelessWidget {
         home: HomePage(),
         routes: {
           HomePage.routeName: (ctx) => HomePage(),
-          FrequenceWord.routeName: (ctx) => FrequenceWord()
+          FrequenceWord.routeName: (ctx) => FrequenceWord(),
+          HillCiherUi.routeNmae: (ctx) => HillCiherUi()
         },
       ),
     );
