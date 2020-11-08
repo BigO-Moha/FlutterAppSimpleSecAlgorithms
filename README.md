@@ -15,5 +15,5 @@ Algorithims.
 
 Exapmle
 
-![alt text](https://github.com/[BigO-Moha]/[FlutterAppSimpleSecAlgorithms]/blob/[master]/image.png?raw=true)
+![alt text](https://github.com/[BigO-Moha]/[FlutterAppSimpleSecAlgorithms]/[master]/image.png?raw=true)
 
