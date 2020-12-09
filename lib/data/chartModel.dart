@@ -29,7 +29,7 @@ class ChartGetter with ChangeNotifier {
     for (var i = 0; i < info.word.length; i++) {
       words.forEach((element) {
         if (element.word == info.word[i]) {
-          element.counted += 1;
+          element.counted = 1;
         }
       });
       if (!words.contains(ChartModel(word: info.word[i], counted: 1)))
