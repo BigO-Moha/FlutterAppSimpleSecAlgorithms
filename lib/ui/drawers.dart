@@ -85,11 +85,31 @@ class DrawersSide extends StatelessWidget {
               },
             ),
             ListTile(
-              title: Text("Highlight",
+              title: Text("Des encryption 15 Bit",
+                  style: MyText.subhead(context).copyWith(
+                      color: Colors.black, fontWeight: FontWeight.w500)),
+              leading: Icon(Icons.lock_sharp, size: 25.0, color: Colors.red),
+              onTap: () {
+                Navigator.pushReplacementNamed(context, '/DesUi');
+              },
+            ),
+            ListTile(
+              title: Text("Aes Encryption 32 bit",
+                  style: MyText.subhead(context).copyWith(
+                      color: Colors.black, fontWeight: FontWeight.w500)),
+              leading: Icon(Icons.lock_sharp, size: 25.0, color: Colors.red),
+              onTap: () {
+                Navigator.pushReplacementNamed(context, '/AesUi');
+              },
+            ),
+            ListTile(
+              title: Text("rsa Enc",
                   style: MyText.subhead(context).copyWith(
                       color: Colors.black, fontWeight: FontWeight.w500)),
               leading: Icon(Icons.lock_sharp, size: 25.0, color: Colors.grey),
-              onTap: () {},
+              onTap: () {
+                Navigator.pushReplacementNamed(context, '/RsaUi');
+              },
             ),
             Divider(),
             ListTile(

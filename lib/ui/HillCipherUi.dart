@@ -11,6 +11,7 @@ class HillCiherUi extends StatefulWidget {
 }
 
 class _HillCiherUiState extends State<HillCiherUi> {
+  
   final _formKey = GlobalKey<FormState>();
   bool isEncryption = true;
   TextEditingController text = TextEditingController();
@@ -74,16 +75,16 @@ class _HillCiherUiState extends State<HillCiherUi> {
       floatingActionButton: Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
+          Padding(child: Text('hello'), padding: EdgeInsets.only(right: 1000)),
           FloatingActionButton(
-            heroTag: "btn1",
-            backgroundColor: Colors.purple,
-            child: isEncryption ? Icon(Icons.lock) : Icon(Icons.lock_open),
-            onPressed: () {
-              setState(() {
-                isEncryption = !isEncryption;
-              });
-            },
-          ),
+              heroTag: "btn1",
+              backgroundColor: Colors.purple,
+              child: isEncryption ? Icon(Icons.lock) : Icon(Icons.lock_open),
+              onPressed: () {
+                setState(() {
+                  isEncryption = !isEncryption;
+                });
+              }),
           SizedBox(
             width: 40,
           ),

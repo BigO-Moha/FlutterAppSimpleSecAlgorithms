@@ -255,7 +255,7 @@ class _HomePageState extends State<HomePage> {
                                             minLines: 2,
                                             decoration: InputDecoration(
                                               filled: true,
-                                              hintText: value.state,
+                                              hintText: value.caiserstate,
                                               hintStyle: MyText.body1(context)
                                                   .copyWith(
                                                       color: Colors.red,

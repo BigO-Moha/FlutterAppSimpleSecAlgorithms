@@ -14,10 +14,10 @@ class FrequenceWord extends StatefulWidget {
 }
 
 class _FrequenceWordState extends State<FrequenceWord> {
+  TextEditingController word = TextEditingController();
+  TextEditingController count = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    TextEditingController word = TextEditingController();
-    TextEditingController count = TextEditingController();
     final data_no = Provider.of<ChartGetter>(context, listen: false);
     final data = Provider.of<ChartGetter>(context, listen: true);
     return Scaffold(
@@ -34,10 +34,19 @@ class _FrequenceWordState extends State<FrequenceWord> {
             padding: const EdgeInsets.symmetric(vertical: 100, horizontal: 50),
             child: TextFormField(
                 controller: word,
+                onChanged: (val) {
+                  data_no.words = [];
+
+                  data_no.addToword(ChartModel(
+                      word: word.text.replaceAll(new RegExp(r"\s+"), ""),
+                      counted: 1));
+                },
                 onFieldSubmitted: (val) {
                   data_no.words = [];
-                  
-                  data_no.addToword(ChartModel(word: word.text.replaceAll(new RegExp(r"\s+"), ""), counted: 1));
+
+                  data_no.addToword(ChartModel(
+                      word: word.text.replaceAll(new RegExp(r"\s+"), ""),
+                      counted: 1));
                   word.text = val;
                 },
                 decoration: new InputDecoration(

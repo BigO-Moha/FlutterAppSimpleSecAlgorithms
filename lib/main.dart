@@ -1,4 +1,7 @@
 import 'package:encrypt_decrypt/data/chartModel.dart';
+import 'package:encrypt_decrypt/ui/DesUi.dart';
+import 'package:encrypt_decrypt/ui/aes_UI.dart';
+import 'package:encrypt_decrypt/ui/rsa.dart';
 import 'package:encrypt_decrypt/ui/wordCounter.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -16,9 +19,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers: [ChangeNotifierProvider.value(value: Calc(),),
-      ChangeNotifierProvider.value(value: ChartGetter())],
-          child: MaterialApp(
+      providers: [
+        ChangeNotifierProvider.value(
+          value: Calc(),
+        ),
+        ChangeNotifierProvider.value(value: ChartGetter())
+      ],
+      child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Casear ',
         theme: ThemeData(
@@ -38,10 +45,12 @@ class MyApp extends StatelessWidget {
         routes: {
           HomePage.routeName: (ctx) => HomePage(),
           FrequenceWord.routeName: (ctx) => FrequenceWord(),
-          HillCiherUi.routeNmae: (ctx) => HillCiherUi()
+          HillCiherUi.routeNmae: (ctx) => HillCiherUi(),
+          DesUi.routeName: (ctx) => DesUi(),
+          AesUi.routeName: (ctx) => AesUi(),
+          RsaUi.routeName: (ctx) => RsaUi()
         },
       ),
     );
   }
 }
-
