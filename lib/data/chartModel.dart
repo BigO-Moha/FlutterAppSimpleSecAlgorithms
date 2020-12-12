@@ -26,10 +26,10 @@ class ChartGetter with ChangeNotifier {
 
   void addToword(ChartModel info) async {
     print(info.word);
-    for (var i = 0; i < info.word.length; i++) {
+    for (var i = 1; i < info.word.length; i++) {
       words.forEach((element) {
         if (element.word == info.word[i]) {
-          element.counted += 1;
+          element.counted = 1;
         }
       });
       if (!words.contains(ChartModel(word: info.word[i], counted: 1)))
